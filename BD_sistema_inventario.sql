@@ -57,9 +57,30 @@ Cantidad_productos int not null,
 Reordenamiento int,
 Fecha_de_creacion date not null default current_date, 
 Fecha_de_actualizacion date,
-constraint fk_stock_bodega foreign key (ID_bodega_fk) references BODEGA(ID_bodega),
+constraint fk_stock_bodega foreign key (ID_bodega_fk) references BODEGA(ID_bodega), /*Sintaxis para FK en una tabla*/
 constraint fk_stock_producto foreign key (ID_producto_fk) references PRODUCTO(ID_producto)
 )
+
+alter table bodega add region varchar(20); /*Agrega columna a la tabla*/
+alter table cliente add column edad int; /*Agrega columna edad a la tabla*/
+alter table cliente drop column edad ; /*Elimina columna edad de la tabla*/
+
+/*Truncate : Elimina todo el contenido de una tabla, pero no la tabla en si*/
+
+create table PRUEBA (
+ID_prueba int primary key, 
+Fecha_de_creacion date not null default current_date, 
+Fecha_de_actualizacion date
+);
+
+drop table PRUEBA; /*Elimina una tabla existente*/
+
+create table cliente_backup (like cliente including all); /*Crea una tabla identica a otra*/
+
+
+
+
+
 
 
 
