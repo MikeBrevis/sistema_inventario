@@ -7,7 +7,7 @@ Telefono varchar(10) not null,
 Correo varchar(50) not null, 
 Fecha_de_creacion date not null default current_date, 
 Fecha_de_actualizacion date,
-ADD constraint uq_rut UNIQUE (RUT)
+constraint uq_rut UNIQUE (RUT)
 );
 
 CREATE TABLE IF NOT EXISTS CLIENTE (
@@ -36,8 +36,8 @@ Nombre varchar(20) not null,
 Peso varchar(10) not null, 
 Costo int not null, 
 Fecha_de_creacion date not null default current_date, 
-Fecha_de_actualizacion date
-ADD constraint uq_nombre UNIQUE (Nombre)
+Fecha_de_actualizacion date,
+constraint uq_nombre UNIQUE (Nombre)
 );
 
 CREATE TABLE IF NOT EXISTS BODEGA (
@@ -47,7 +47,7 @@ Direccion varchar(50) not null,
 Comuna varchar(20) not null, 
 Fecha_de_creacion date not null default current_date, 
 Fecha_de_actualizacion date,
-ADD constraint uq_nombre_sucursal UNIQUE (Nombre_sucursal)
+constraint uq_nombre_sucursal UNIQUE (Nombre_sucursal)
 );
 
 CREATE TABLE IF NOT EXISTS DETALLE_COTIZACION (
