@@ -1,72 +1,77 @@
 CREATE TABLE IF NOT EXISTS EMPLEADO (
-ID_EMPLEADO serial primary key, 
-RUT varchar(20) not null,
-Nombre varchar(20) not null,
-Apellido varchar(20) not null,
-Telefono varchar(10) not null, 
-Correo varchar(50) not null, 
-Fecha_de_creacion date not null default current_date, 
-Fecha_de_actualizacion date,
-constraint uq_rut UNIQUE (RUT)
+id_empleado serial primary key, 
+rut varchar(20) not null,
+nombre varchar(20) not null,
+apellido varchar(20) not null,
+telefono varchar(10) not null, 
+correo varchar(50) not null, 
+fecha_de_creacion date not null default current_date, 
+fecha_de_actualizacion date,
+constraint uq_rut UNIQUE (rut)
 );
 
 CREATE TABLE IF NOT EXISTS CLIENTE (
-ID_cliente serial primary key, 
-Nombre varchar(20) not null, 
-Apellido varchar(20), 
-Telefono varchar(10), 
-Correo varchar(50) not null, 
-Fecha_de_creacion date not null default current_date, 
-Fecha_de_actualizacion date
+id_cliente serial primary key, 
+nombre varchar(20) not null, 
+apellido varchar(20), 
+telefono varchar(10), 
+correo varchar(50) not null, 
+fecha_de_creacion date not null default current_date, 
+fecha_de_actualizacion date
 );
 
 CREATE TABLE IF NOT EXISTS PRODUCTO (
-ID_producto serial primary key,
-Nombre varchar(20) not null, 
-Peso varchar(10) not null, 
-Costo int not null, 
-Fecha_de_creacion date not null default current_date, 
-Fecha_de_actualizacion date,
-constraint uq_nombre UNIQUE (Nombre)
+id_producto serial primary key,
+nombre varchar(20) not null, 
+peso varchar(10) not null, 
+costo int not null, 
+fecha_de_creacion date not null default current_date, 
+fecha_de_actualizacion date,
+constraint uq_nombre UNIQUE (nombre)
 );
 
 CREATE TABLE IF NOT EXISTS BODEGA (
-ID_bodega serial primary key,
-Nombre_sucursal varchar(20) not null,
-direccion varchar(50) not null, 
-Comuna varchar(20) not null, 
-Fecha_de_creacion date not null default current_date, 
-Fecha_de_actualizacion date,
-constraint uq_nombre_sucursal UNIQUE (Nombre_sucursal)
+id_bodega serial primary key,
+nombre_sucursal varchar(20) not null,
+sucursal varchar(50) not null, 
+region varchar(20) not null, 
+fecha_de_creacion date not null default current_date, 
+fecha_de_actualizacion date,
+constraint uq_nombre_sucursal UNIQUE (nombre_sucursal)
 );
 
 CREATE TABLE IF NOT EXISTS COTIZACION (
-ID_cotizacion serial primary key,
-ID_cliente_fk serial,
-ID_empleado_fk serial,
-Fecha_de_venta date not null, 
+id_cotizacion serial primary key,
+id_cliente_fk integer,
+id_empleado_fk integer,
+fecha_de_venta date not null, 
 tipo_de_contrato varchar(50) not null,
-constraint fk_empleado_cotizacion foreign key (ID_empleado_fk) references EMPLEADO(ID_EMPLEADO),
-constraint fk_cliente_cotizacion foreign key (ID_cliente_fk) references CLIENTE(ID_cliente)
+constraint fk_empleado_cotizacion foreign key (id_empleado_fk) references EMPLEADO(id_empleado),
+constraint fk_cliente_cotizacion foreign key (id_cliente_fk) references CLIENTE(id_cliente)
 );
 
 CREATE TABLE IF NOT EXISTS DETALLE_COTIZACION (
-ID_DETALLE_COTIZACION serial primary key,
-ID_producto_fk serial,
-constraint fk_detalleCotizacion_producto foreign key (ID_producto_fk) references PRODUCTO(ID_producto)
+id_detalle_cotizacion serial primary key,
+id_cotizacion_fk integer,
+id_producto_fk integer,
+cantidad int not null default 1,
+constraint fk_detalleCotizacion_cotizacion foreign key (id_cotizacion_fk) references COTIZACION(id_cotizacion),
+constraint fk_detalleCotizacion_producto foreign key (id_producto_fk) references PRODUCTO(id_producto)
 );
 
 CREATE TABLE IF NOT EXISTS STOCK (
-ID_STOCK serial primary key,
-ID_bodega_fk serial,
-ID_producto_fk serial,
-Cantidad_productos int not null,
-Reordenamiento int not null,
-Fecha_de_creacion date not null default current_date, 
-Fecha_de_actualizacion date,
-constraint fk_stock_bodega foreign key (ID_bodega_fk) references BODEGA(ID_bodega), 
-constraint fk_stock_producto foreign key (ID_producto_fk) references PRODUCTO(ID_producto)
+id_stock serial primary key,
+id_bodega_fk integer,
+id_producto_fk integer,
+cantidad_productos int not null,
+reordenamiento int not null,
+fecha_de_creacion date not null default current_date, 
+fecha_de_actualizacion date,
+constraint fk_stock_bodega foreign key (id_bodega_fk) references BODEGA(id_bodega), 
+constraint fk_stock_producto foreign key (id_producto_fk) references PRODUCTO(id_producto)
 );
+
+
 
 
 
