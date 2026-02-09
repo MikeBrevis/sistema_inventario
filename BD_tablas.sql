@@ -20,16 +20,6 @@ Fecha_de_creacion date not null default current_date,
 Fecha_de_actualizacion date
 );
 
-CREATE TABLE IF NOT EXISTS COTIZACION (
-ID_cotizacion serial primary key,
-ID_cliente_fk serial,
-ID_empleado_fk serial,
-Fecha_de_venta date not null, 
-tipo_de_contrato varchar(50) not null,
-constraint fk_empleado_cotizacion foreign key (ID_empleado_fk) references EMPLEADO(ID_EMPLEADO),
-constraint fk_cliente_cotizacion foreign key (ID_cliente_fk) references CLIENTE(ID_cliente)
-);
-
 CREATE TABLE IF NOT EXISTS PRODUCTO (
 ID_producto serial primary key,
 Nombre varchar(20) not null, 
@@ -43,11 +33,21 @@ constraint uq_nombre UNIQUE (Nombre)
 CREATE TABLE IF NOT EXISTS BODEGA (
 ID_bodega serial primary key,
 Nombre_sucursal varchar(20) not null,
-Direccion varchar(50) not null, 
+direccion varchar(50) not null, 
 Comuna varchar(20) not null, 
 Fecha_de_creacion date not null default current_date, 
 Fecha_de_actualizacion date,
 constraint uq_nombre_sucursal UNIQUE (Nombre_sucursal)
+);
+
+CREATE TABLE IF NOT EXISTS COTIZACION (
+ID_cotizacion serial primary key,
+ID_cliente_fk serial,
+ID_empleado_fk serial,
+Fecha_de_venta date not null, 
+tipo_de_contrato varchar(50) not null,
+constraint fk_empleado_cotizacion foreign key (ID_empleado_fk) references EMPLEADO(ID_EMPLEADO),
+constraint fk_cliente_cotizacion foreign key (ID_cliente_fk) references CLIENTE(ID_cliente)
 );
 
 CREATE TABLE IF NOT EXISTS DETALLE_COTIZACION (
