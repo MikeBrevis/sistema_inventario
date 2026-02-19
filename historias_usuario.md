@@ -2,7 +2,7 @@
 
 ## Roles
 - **Usuario Maestro (Admin)**: Responsable de la gestión y visualización completa del inventario y aprobación de movimientos.
-- **Usuario de Bodega**: Encargado de ingresar entrega de insumos (requiere aprovacion del usuario maestro) y visualizar el inventario.
+- **Usuario de Bodega(Bod)**: Encargado de ingresar entrega de insumos (requiere aprovacion del usuario maestro) y visualizar el inventario.
 
 ---
 
@@ -11,8 +11,12 @@
 **HU-01: Acceso al Sistema**
 - **Como** usuario (Maestro o Bodega),
 - **Quiero** iniciar sesión con mis credenciales (usuario y contraseña),
-- **Para** acceder a las funcionalidades correspondientes a mi rol y resguardar la información.
-*(Ref: Requerimiento 1)*
+- **Para** acceder a las funcionalidades correspondientes a su rol y resguardar la información.
+
+DADO que el admin o bode inicio sesion correctamente.
+CUANDO el admin o bode ingrese sus credenciales.
+ENTONCES el sistema le permitirá acceder a las funcionalidades correspondientes a su rol. El sistema permanecera en sesion hasta que el usuario cierre sesion.
+SI NO puede acceder se le mostrará un mensaje de error, dando la opcion solicitar restablecimiento de contraseña.
 
 ### Módulo de Gestión de Inventario (Maestro)
 
