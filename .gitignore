@@ -1,1 +1,45 @@
+# Entornos virtuales
 venv/
+env/
+.env
+.venv/
+env.bak/
+venv.bak/
+
+# Archivos de Python (caché y compilados)
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Archivos de sistema operativo
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+ehthumbs_vista.db
+[Tt]humbs.db
+
+# Configuración de IDEs y editores
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.vs/
+
+# Archivos temporales de Office (para evitar subir los archivos temporales generados al tener abierto el .docx)
+~$*.doc
+~$*.docx
+~$*.xls
+~$*.xlsx
+~$*.ppt
+~$*.pptx
+
+# Bases de datos SQLite temporales
+*.sqlite3
+*.db
+
+# Logs
+*.log

@@ -16,3 +16,4 @@
 # Entrega Nominativa: Ninguna Solicitud de Entrega puede ser procesada ni aprobada si no incluye explícitamente el nombre y apellido de la persona física que recibe el insumo. No existen salidas "anónimas".
 
 # Huella de Autoría: Toda acción de creación de solicitud debe llevar adjunta la firma (ID) del Usuario de Bodega que la generó, y toda aprobación debe registrar al Usuario Maestro que la autorizó.
+
