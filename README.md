@@ -35,7 +35,6 @@ cd sistema_inventario
 ```
 
 ### 3. Configuración del Entorno Virtual (Recomendado)
-Es una buena práctica trabajar en un entorno virtual aislado para gestionar los paquetes de Python.
 
 **En Windows:**
 ```bash
