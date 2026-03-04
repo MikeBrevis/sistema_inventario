@@ -49,16 +49,11 @@ source venv/bin/activate
 ```
 
 ### 4. Instalación de Dependencias
+```bash
 pip install -r requirements.txt
-
-
+```
 
 ## 📄 Documentación Adicional
-En la carpeta raíz puedes encontrar material adicional y diagramas que respaldan la arquitectura del proyecto:
+Puedes encontrar material adicional y diagramas que respaldan la arquitectura del proyecto en la carpeta `ant` y `diagram`.
 
-* `Análisis y diseño - Sistema de Inventario.docx`: Documento principal de análisis.
-* `ER_diagram.drawio` & `ER_diagram.png`: Diagramas de Entidad-Relación de la base de datos.
-* `casos_uso_UML2.png`: Diagrama de casos de uso (UML).
-* `historias_usuario.md`: Detalle de Historias de Usuario para el desarrollo del aplicativo.
-* `reglas_negocio.md`: Detalles minuciosos del comportamiento y reglas de validación.
-* `documentation.md`: Información de apoyo y de requisitos iniciales.
+
