@@ -49,25 +49,9 @@ source venv/bin/activate
 ```
 
 ### 4. Instalación de Dependencias
-Asegúrate de instalar los módulos si ya existe el archivo `requirements.txt`:
-```bash
 pip install -r requirements.txt
-```
-*(Si agregarás un framework como Django, Flask, o librerías DB, asegúrate de añadirlas a ese archivo).*
 
-### 5. Configuración de Base de Datos
-Encontrarás scripts de SQL predefinidos en la raíz para preparar la Base de Datos:
 
-1. Ejecuta primero la estructura de las tablas usando el archivo **`bd_tables.sql`**.
-2. A continuación, inserta la data semilla de pruebas usando el archivo **`data_insertion.sql`**.
-
-### 6. Ejecución del Sistema
-Una vez con la base de datos preparada y el entorno activo, arranca tu servidor de desarrollo (dependiendo del framework elegido):
-```bash
-python app.py  # (O el comando correspondiente a tu framework)
-```
-
----
 
 ## 📄 Documentación Adicional
 En la carpeta raíz puedes encontrar material adicional y diagramas que respaldan la arquitectura del proyecto:
