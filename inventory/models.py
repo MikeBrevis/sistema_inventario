@@ -11,6 +11,9 @@ class Supplies(models.Model):
     supplies_name = models.CharField(max_length=50)
     description = models.CharField(max_length=200)
 
+    class Meta:
+        verbose_name_plural = 'Supplies'
+
     def __str__(self):
         return self.supplies_name
 
