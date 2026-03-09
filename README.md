@@ -53,6 +53,11 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
+### 5. Cargar datos iniciales de BD
+```bash
+python manage.py loaddata inventory/fixtures/offices.json
+```
+
 ## 📄 Documentación Adicional
 Puedes encontrar material adicional y diagramas que respaldan la arquitectura del proyecto en la carpeta `ant` y `diagram`.
 
